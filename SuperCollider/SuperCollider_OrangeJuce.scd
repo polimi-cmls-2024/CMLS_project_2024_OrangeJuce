@@ -24,13 +24,13 @@ NetAddr("127.0.0.1",57120);
 	osc = Select.ar(link_lfo, [
 		Select.ar(waveType, [
 			SinOsc.ar(frequency * (2 ** octave) * (1 + detune), phase),
-			Saw.ar(frequency * (2 ** octave) * (1 + detune), 1, phase),
-			Pulse.ar(frequency * (2 ** octave) * (1 + detune), 0.5, 1, phase)
+			Saw.ar(frequency * (2 ** octave) * (1 + detune), 1),
+			Pulse.ar(frequency * (2 ** octave) * (1 + detune), 0.5)
 		]) ,
 	    Select.ar(waveType, [
 			SinOsc.ar(lfo * (2 ** octave), phase),
-			Saw.ar(lfo * (2 ** octave), 1,  phase),
-			Pulse.ar(lfo * (2 ** octave), 0.5,1, phase)])]);
+			Saw.ar(lfo * (2 ** octave), 1),
+			Pulse.ar(lfo * (2 ** octave), 0.5)])]);
 	osc;
 };
 
